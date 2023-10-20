@@ -5,7 +5,7 @@ const { onSmartTablePage } = require("../support/page_objects/smartTablePage")
 
 describe('Test with Page Objects', () => {
     beforeEach('open application', () => {
-        cy.visit('/')
+        cy.openHomePage()
     })
 
     it('verify navigation across the pages', () => {
