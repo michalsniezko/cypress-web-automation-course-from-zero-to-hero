@@ -18,8 +18,8 @@ export class NavigationPage {
         selectGroupMenuItem('Form')
         cy.contains('Datepicker').click()
     }
-    
-    toastrPage() {
+
+    toasterPage() {
         selectGroupMenuItem('Modal & Overlays')
         cy.contains('Toastr').click()
     }
