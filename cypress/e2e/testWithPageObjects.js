@@ -1,3 +1,6 @@
+/// <reference types="cypress" />
+
+
 const { onDatepickerPage } = require("../support/page_objects/datepickerPage")
 const { onFormLayoutsPage } = require("../support/page_objects/formLayoutsPage")
 const { navigateTo } = require("../support/page_objects/navigationPage")
