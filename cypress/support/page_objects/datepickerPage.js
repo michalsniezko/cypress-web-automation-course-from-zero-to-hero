@@ -20,7 +20,7 @@ function selectDayFromCurrent(day) {
 }
 
 export class DatepickerPage {
-    selectCommonDatepickerDateFromToday (dayFromToday) {
+    selectCommonDatepickerDateFromToday(dayFromToday) {
         cy.contains('nb-card', 'Common Datepicker').find('input').then(input => {
             cy.wrap(input).click()
             const dateToAssert = selectDayFromCurrent(dayFromToday)
@@ -34,13 +34,12 @@ export class DatepickerPage {
             cy.wrap(input).click()
             const dateToAssertFirst = selectDayFromCurrent(firstDay)
             const dateToAssertSecond = selectDayFromCurrent(secondDay)
-            
+
             const finalDate = dateToAssertFirst + ' - ' + dateToAssertSecond
 
             cy.wrap(input).invoke('prop', 'value').should('contain', finalDate)
             cy.wrap(input).should('have.value', finalDate)
         })
-
     }
 }
 
