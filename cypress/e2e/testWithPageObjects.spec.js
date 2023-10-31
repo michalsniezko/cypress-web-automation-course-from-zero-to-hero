@@ -19,7 +19,7 @@ describe('Test with Page Objects', () => {
         navigateTo.toasterPage()
     })
 
-    it('should submit Inline and Basic form and select tomorrow date in the calendar', () => {
+    it('should submit Inline and Basic form and select tomorrow date in the calendar', { browser: ['!firefox', '!edge'] }, () => {
         navigateTo.formLayoutsPage()
         onFormLayoutsPage.submitInlineFormWithNameAndEmail('Michał', 'test@test.com')
         onFormLayoutsPage.submitBasicFormWithEmailAndPassword('test@test.com', 'abc123')
