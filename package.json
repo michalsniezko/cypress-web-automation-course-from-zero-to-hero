@@ -29,7 +29,11 @@
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "cy:run_spec": "npx cypress run --spec 'cypress/e2e/testWithPageObjects.spec.js' --browser firefox"
+    "cy:run_spec": "npx cypress run --spec 'cypress/e2e/testWithPageObjects.spec.js' --record --key 4b10ebce-9207-444f-970b-9f81ca903126",
+    "cy:run_browser": "npm run cy:run_spec -- --browser firefox --group FirefoxGroup --ci-build-id 2 & npm run cy:run_spec -- --browser chrome --group ChromeGroup --ci-build-id 2",
+    "cy:run_for_parallel": "npx cypress run --record --key 4b10ebce-9207-444f-970b-9f81ca903126 --parallel --ci-build-id $ID",
+    "cy:run_in_parallel": "npm run cy:run_for_parallel & npm run cy:run_for_parallel & npm run cy:run_for_parallel & npm run cy:run_for_parallel",
+    "cy:run_randomized_id": "ID=$(uuid) npm run cy:run_in_parallel"
   },
   "dependencies": {
     "@agm/core": "^1.1.0",
